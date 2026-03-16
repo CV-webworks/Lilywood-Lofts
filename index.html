@@ -4,9 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lilywood Carpentry – Loft Conversion Specialists in Barnet</title>
-  <meta name="description" content="Lilywood Carpentry is a family-run loft conversion and carpentry company in East Barnet, North London. Nearly 20 years' experience, fully managed loft projects, bespoke carpentry, and free consultations." />
+  <meta name="description" content="Family-run loft conversion and carpentry specialists in East Barnet, North London. Nearly 20 years' experience, fully managed loft projects, bespoke carpentry and free consultations." />
   <meta name="theme-color" content="#641226" />
   <meta name="format-detection" content="telephone=yes" />
+  <meta property="og:title" content="Lilywood Carpentry – Loft Conversion Specialists in Barnet" />
+  <meta property="og:description" content="Transform your unused loft into a beautiful new bedroom, office or living space." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://i.ibb.co/YByr02Ms/lofts-hero.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -14,22 +18,29 @@
   <style>
     :root {
       --primary: #641226;
-      --primary-2: #7b1730;
+      --primary-2: #7d1831;
       --primary-dark: #430b18;
-      --accent: #d6b06a;
-      --bg: #faf7f5;
-      --surface: #ffffff;
-      --surface-2: #f3ece8;
-      --text: #171214;
-      --muted: #5e5559;
+      --gold: #d7b06d;
+      --gold-soft: #f4ead5;
+      --ink: #171214;
+      --text: #261c20;
+      --muted: #665c60;
+      --bg: #fbf8f6;
+      --bg-2: #f5efeb;
+      --white: #ffffff;
       --line: rgba(100, 18, 38, 0.12);
-      --shadow: 0 10px 30px rgba(25, 16, 20, 0.08);
-      --shadow-lg: 0 18px 60px rgba(25, 16, 20, 0.18);
-      --radius: 22px;
-      --radius-sm: 14px;
-      --max: 1200px;
-      --nav-h: 76px;
-      --success: #1f7a4d;
+      --line-strong: rgba(100, 18, 38, 0.2);
+      --shadow-sm: 0 8px 24px rgba(28, 16, 20, 0.08);
+      --shadow: 0 14px 40px rgba(28, 16, 20, 0.1);
+      --shadow-lg: 0 24px 70px rgba(28, 16, 20, 0.18);
+      --radius-sm: 16px;
+      --radius: 24px;
+      --radius-lg: 32px;
+      --max: 1220px;
+      --nav-h: 78px;
+      --success: #1d7a4a;
+      --section-space: clamp(78px, 8vw, 120px);
+      --ease: cubic-bezier(.2,.8,.2,1);
     }
 
     * {
@@ -42,11 +53,15 @@
 
     body {
       margin: 0;
+      overflow-x: hidden;
       font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color: var(--text);
-      background: linear-gradient(180deg, #fff 0%, #fcf9f8 45%, #f8f2ef 100%);
-      line-height: 1.6;
-      overflow-x: hidden;
+      background:
+        radial-gradient(circle at top left, rgba(215, 176, 109, 0.08), transparent 28%),
+        linear-gradient(180deg, #fff 0%, #fcf9f8 42%, #f6f0ed 100%);
+      line-height: 1.65;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
     }
 
     img {
@@ -66,9 +81,13 @@
     }
 
     :focus-visible {
-      outline: 3px solid #b78a3d;
+      outline: 3px solid var(--gold);
       outline-offset: 3px;
-      border-radius: 10px;
+      border-radius: 12px;
+    }
+
+    ::selection {
+      background: rgba(100, 18, 38, 0.15);
     }
 
     .container {
@@ -77,145 +96,156 @@
     }
 
     .section {
-      padding: 90px 0;
+      padding: var(--section-space) 0;
+      position: relative;
+    }
+
+    .section.alt {
+      background: linear-gradient(180deg, rgba(255,255,255,0.5), rgba(245,239,235,0.72));
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.6rem;
       color: var(--primary);
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
       font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
       margin-bottom: 1rem;
     }
 
     .eyebrow::before {
       content: "";
-      width: 34px;
+      width: 38px;
       height: 2px;
-      background: var(--accent);
+      background: linear-gradient(90deg, var(--gold), transparent);
       display: block;
     }
 
-    h1,
-    h2,
-    h3,
-    h4 {
-      font-family: "Cormorant Garamond", Georgia, serif;
-      line-height: 1.05;
+    h1, h2, h3, h4 {
       margin: 0 0 1rem;
-    }
-
-    h1 {
-      font-size: clamp(2.6rem, 7vw, 5.6rem);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      line-height: 1.02;
+      color: var(--ink);
       letter-spacing: -0.03em;
     }
 
+    h1 {
+      font-size: clamp(2.9rem, 6.8vw, 5.8rem);
+      color: #fff;
+    }
+
     h2 {
-      font-size: clamp(2rem, 4vw, 3.5rem);
-      letter-spacing: -0.02em;
+      font-size: clamp(2.1rem, 4.2vw, 3.8rem);
     }
 
     h3 {
-      font-size: clamp(1.45rem, 2vw, 2rem);
+      font-size: clamp(1.45rem, 2.2vw, 2.05rem);
     }
 
     p {
-      margin: 0.6rem 0 1rem;
+      margin: 0.65rem 0 1rem;
       color: var(--muted);
     }
 
     .lead {
-      font-size: clamp(1.03rem, 1.8vw, 1.2rem);
+      font-size: clamp(1.05rem, 1.5vw, 1.2rem);
       max-width: 62ch;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .center .lead,
+    .center p {
+      margin-inline: auto;
     }
 
     .grid {
       display: grid;
-      gap: 1.35rem;
+      gap: 1.4rem;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow-sm);
+      border-radius: var(--radius);
+    }
+
+    .glass {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.16);
+      backdrop-filter: blur(14px);
     }
 
     .btns {
       display: flex;
-      gap: 0.9rem;
       flex-wrap: wrap;
+      gap: 0.9rem;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.65rem;
+      gap: 0.7rem;
+      min-height: 54px;
       padding: 14px 22px;
       border-radius: 999px;
       border: 1px solid transparent;
-      font-weight: 700;
-      transition: 0.25s transform, 0.25s box-shadow, 0.25s background, 0.25s border-color;
+      font-weight: 800;
       cursor: pointer;
-      min-height: 52px;
+      transition: transform .28s var(--ease), box-shadow .28s var(--ease), background .28s var(--ease), border-color .28s var(--ease);
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
     }
 
     .btn-primary {
       color: #fff;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 100%);
-      box-shadow: 0 10px 26px rgba(100, 18, 38, 0.28);
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      box-shadow: 0 12px 28px rgba(100, 18, 38, 0.28);
     }
 
     .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 18px 35px rgba(100, 18, 38, 0.34);
+      box-shadow: 0 18px 36px rgba(100, 18, 38, 0.36);
     }
 
     .btn-secondary {
-      background: rgba(255, 255, 255, 0.12);
       color: #fff;
-      border-color: rgba(255, 255, 255, 0.28);
-      backdrop-filter: blur(10px);
+      background: transparent;
+      border-color: rgba(255,255,255,0.28);
     }
 
     .btn-secondary:hover {
-      transform: translateY(-2px);
-      background: rgba(255, 255, 255, 0.18);
+      background: rgba(255,255,255,0.08);
     }
 
-    .card {
-      background: rgba(255, 255, 255, 0.82);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      border-radius: var(--radius);
+    .btn-light {
+      color: var(--primary);
+      background: #fff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-light:hover {
       box-shadow: var(--shadow);
-    }
-
-    .shadow-lg {
-      box-shadow: var(--shadow-lg);
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(26px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: none;
-    }
-
-    .parallax {
-      will-change: transform;
     }
 
     .skip-link {
       position: absolute;
       left: -9999px;
       top: 0;
+      z-index: 9999;
+      padding: 1rem;
       background: #fff;
       color: #000;
-      padding: 1rem;
-      z-index: 9999;
     }
 
     .skip-link:focus {
@@ -223,17 +253,56 @@
       top: 1rem;
     }
 
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .85s var(--ease), transform .85s var(--ease);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .float-up {
+      animation: floatUp 5.2s ease-in-out infinite;
+    }
+
+    .float-slow {
+      animation: floatSoft 7.4s ease-in-out infinite;
+    }
+
+    .pulse-glow {
+      animation: pulseGlow 2.6s ease-in-out infinite;
+    }
+
+    @keyframes floatUp {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @keyframes floatSoft {
+      0%,100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(.5deg); }
+    }
+
+    @keyframes pulseGlow {
+      0%,100% { box-shadow: 0 0 0 0 rgba(215,176,109,0.0); }
+      50% { box-shadow: 0 0 0 10px rgba(215,176,109,0.08); }
+    }
+
+    /* Header */
     .site-header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(250, 247, 245, 0.78);
+      background: rgba(251, 248, 246, 0.78);
+      border-bottom: 1px solid rgba(100,18,38,0.08);
       backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(100, 18, 38, 0.08);
     }
 
     .nav {
-      height: var(--nav-h);
+      min-height: var(--nav-h);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -248,33 +317,29 @@
     }
 
     .brand-mark {
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      background: conic-gradient(from 210deg, var(--primary), #8b233b, var(--accent), var(--primary));
+      width: 46px;
+      height: 46px;
       display: grid;
       place-items: center;
+      border-radius: 14px;
       color: #fff;
       font-weight: 800;
-      box-shadow: var(--shadow);
-    }
-
-    .brand-text {
-      min-width: 0;
+      background: linear-gradient(135deg, var(--primary), #8a223d 60%, var(--gold));
+      box-shadow: var(--shadow-sm);
+      flex-shrink: 0;
     }
 
     .brand-text strong {
       display: block;
-      font-size: 1rem;
-      line-height: 1;
       color: var(--primary);
+      line-height: 1;
       letter-spacing: 0.02em;
     }
 
     .brand-text span {
       display: block;
-      font-size: 0.82rem;
       color: var(--muted);
+      font-size: 0.82rem;
     }
 
     .nav-links {
@@ -287,42 +352,42 @@
     }
 
     .nav-links a {
+      min-height: 42px;
       display: inline-flex;
       align-items: center;
-      min-height: 42px;
       padding: 0 14px;
       border-radius: 999px;
-      font-weight: 600;
-      color: #37272c;
+      font-weight: 700;
+      color: #3f3136;
+      transition: .24s;
     }
 
     .nav-links a:hover,
     .nav-links a.active {
-      background: rgba(100, 18, 38, 0.08);
+      background: rgba(100,18,38,0.08);
       color: var(--primary);
     }
 
     .nav-cta {
       display: flex;
       align-items: center;
-      gap: 0.7rem;
+      gap: 0.75rem;
     }
 
     .mini-contact {
       display: none;
-      font-size: 0.92rem;
       font-weight: 700;
       color: var(--primary);
     }
 
     .menu-toggle {
       display: none;
-      border: 0;
-      background: transparent;
       width: 48px;
       height: 48px;
-      border-radius: 12px;
+      border: 0;
+      background: transparent;
       position: relative;
+      border-radius: 12px;
     }
 
     .menu-toggle span,
@@ -334,182 +399,238 @@
       right: 12px;
       height: 2px;
       background: var(--primary);
-      transition: 0.25s;
+      transition: .25s;
     }
 
-    .menu-toggle span {
-      top: 23px;
-    }
+    .menu-toggle span { top: 23px; }
+    .menu-toggle::before { top: 16px; }
+    .menu-toggle::after { top: 30px; }
 
-    .menu-toggle::before {
-      top: 16px;
-    }
+    .menu-toggle[aria-expanded="true"] span { opacity: 0; }
+    .menu-toggle[aria-expanded="true"]::before { transform: translateY(7px) rotate(45deg); }
+    .menu-toggle[aria-expanded="true"]::after { transform: translateY(-7px) rotate(-45deg); }
 
-    .menu-toggle::after {
-      top: 30px;
-    }
-
-    .menu-toggle[aria-expanded="true"] span {
-      opacity: 0;
-    }
-
-    .menu-toggle[aria-expanded="true"]::before {
-      transform: translateY(7px) rotate(45deg);
-    }
-
-    .menu-toggle[aria-expanded="true"]::after {
-      transform: translateY(-7px) rotate(-45deg);
-    }
-
+    /* Hero */
     .hero {
       position: relative;
-      min-height: calc(100svh - var(--nav-h));
-      display: flex;
-      align-items: center;
-      isolation: isolate;
       overflow: hidden;
-    }
-
-    .hero-bg {
-      position: absolute;
-      inset: 0;
       background:
-        linear-gradient(120deg, rgba(18, 8, 12, 0.78) 0%, rgba(37, 14, 22, 0.62) 38%, rgba(100, 18, 38, 0.56) 100%),
-        url("https://i.ibb.co/YByr02Ms/lofts-hero.png") center / cover no-repeat;
-      transform: scale(1.06);
-      z-index: -2;
+        radial-gradient(circle at 12% 22%, rgba(215,176,109,0.18), transparent 22%),
+        radial-gradient(circle at 82% 18%, rgba(255,255,255,0.08), transparent 20%),
+        linear-gradient(135deg, #521020 0%, #641226 45%, #7d1831 100%);
+      color: #fff;
+      padding: clamp(34px, 5vw, 54px) 0 clamp(70px, 8vw, 100px);
     }
 
+    .hero::before,
     .hero::after {
       content: "";
       position: absolute;
-      inset: auto 0 0;
-      height: 160px;
-      background: linear-gradient(180deg, rgba(250, 247, 245, 0) 0%, rgba(250, 247, 245, 0.96) 100%);
-      z-index: -1;
+      border-radius: 50%;
+      filter: blur(10px);
+      pointer-events: none;
+    }
+
+    .hero::before {
+      width: 320px;
+      height: 320px;
+      right: -80px;
+      top: -90px;
+      background: radial-gradient(circle, rgba(215,176,109,0.18), transparent 68%);
+    }
+
+    .hero::after {
+      width: 260px;
+      height: 260px;
+      left: -80px;
+      bottom: -80px;
+      background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 68%);
     }
 
     .hero-wrap {
       display: grid;
-      grid-template-columns: 1.12fr 0.88fr;
-      gap: 2rem;
+      grid-template-columns: 1.06fr 0.94fr;
+      gap: clamp(1.6rem, 4vw, 3rem);
       align-items: center;
-      padding: 64px 0 80px;
+      min-height: calc(100svh - var(--nav-h) - 24px);
     }
 
     .hero-copy {
-      color: #fff;
+      position: relative;
+      z-index: 1;
     }
 
     .hero-copy p {
-      color: rgba(255, 255, 255, 0.88);
+      color: rgba(255,255,255,0.86);
     }
 
     .trust-pill {
       display: inline-flex;
       align-items: center;
       gap: 0.55rem;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      color: #fff;
       padding: 10px 16px;
       border-radius: 999px;
-      backdrop-filter: blur(10px);
       margin-bottom: 1rem;
+      color: #fff;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.16);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-title-wrap {
+      max-width: 12ch;
     }
 
     .hero-points {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.8rem;
-      margin: 1.4rem 0 2rem;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 0.9rem;
+      margin: 1.65rem 0 2rem;
+      max-width: 760px;
     }
 
     .hero-point {
+      padding: 15px 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.12);
       display: flex;
-      gap: 0.75rem;
+      gap: 0.8rem;
       align-items: flex-start;
+      transition: transform .25s var(--ease), background .25s var(--ease);
+    }
+
+    .hero-point:hover {
+      transform: translateY(-3px);
+      background: rgba(255,255,255,0.14);
+    }
+
+    .check {
+      width: 30px;
+      height: 30px;
+      flex: 0 0 30px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--primary);
+      background: var(--gold-soft);
+      font-weight: 800;
+      box-shadow: inset 0 0 0 1px rgba(100,18,38,0.08);
+    }
+
+    .hero-side {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-image-shell {
+      position: relative;
+      border-radius: 34px;
+      padding: 14px;
+      background: linear-gradient(145deg, rgba(255,255,255,0.18), rgba(255,255,255,0.06));
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+
+    .hero-image-shell::before {
+      content: "";
+      position: absolute;
+      inset: 10px;
+      border-radius: 26px;
+      border: 1px solid rgba(255,255,255,0.14);
+      pointer-events: none;
+    }
+
+    .hero-image {
+      aspect-ratio: 4 / 4.8;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-stats {
+      position: absolute;
+      left: -18px;
+      bottom: 24px;
+      display: grid;
+      gap: 0.8rem;
+      width: min(260px, 72%);
+    }
+
+    .hero-stat {
       padding: 14px 16px;
       border-radius: 18px;
-      background: rgba(255, 255, 255, 0.11);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,0.94);
+      color: var(--text);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.74);
     }
 
-    .hero-aside {
-      padding: 1rem;
-    }
-
-    .hero-card {
-      padding: 26px;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 28px;
-      box-shadow: var(--shadow-lg);
-      border: 1px solid rgba(255, 255, 255, 0.65);
-    }
-
-    .metric-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.8rem;
-      margin-top: 1rem;
-    }
-
-    .metric {
-      padding: 16px;
-      border-radius: 18px;
-      background: var(--surface-2);
-      text-align: center;
-    }
-
-    .metric strong {
+    .hero-stat strong {
       display: block;
       color: var(--primary);
-      font-size: 1.25rem;
+      font-size: 1.22rem;
+      line-height: 1;
+      margin-bottom: 0.2rem;
     }
 
-    .hero-badge-list {
-      display: grid;
-      gap: 0.8rem;
-      margin-top: 1rem;
+    .hero-badge-top {
+      position: absolute;
+      right: -16px;
+      top: 24px;
+      padding: 15px 18px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.95);
+      color: var(--text);
+      box-shadow: var(--shadow);
+      max-width: 240px;
     }
 
-    .hero-badge {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 12px 14px;
-      border-radius: 16px;
-      background: #fff;
-      border: 1px solid var(--line);
+    .hero-badge-top strong {
+      display: block;
+      color: var(--primary);
+      margin-bottom: 0.2rem;
     }
 
+    .hero-wave {
+      position: absolute;
+      inset: auto 0 0;
+      height: 110px;
+      background: linear-gradient(180deg, rgba(251,248,246,0) 0%, rgba(251,248,246,1) 100%);
+    }
+
+    /* Trust strip */
     .trust-grid {
       grid-template-columns: repeat(5, 1fr);
+      margin-top: 0.5rem;
     }
 
     .trust-card {
-      padding: 22px 18px;
+      padding: 24px 18px;
       text-align: center;
-      transition: 0.25s transform, 0.25s box-shadow, 0.25s border-color;
       border: 1px solid var(--line);
+      background: rgba(255,255,255,0.92);
+      transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
     }
 
     .trust-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-lg);
-      border-color: rgba(100, 18, 38, 0.18);
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+      border-color: var(--line-strong);
     }
 
     .icon {
-      width: 58px;
-      height: 58px;
+      width: 60px;
+      height: 60px;
       margin: 0 auto 1rem;
       border-radius: 18px;
       display: grid;
       place-items: center;
-      background: linear-gradient(135deg, rgba(100, 18, 38, 0.1), rgba(214, 176, 106, 0.18));
+      background: linear-gradient(135deg, rgba(100,18,38,0.1), rgba(215,176,109,0.2));
       color: var(--primary);
+      box-shadow: inset 0 0 0 1px rgba(100,18,38,0.08);
     }
 
     .icon svg {
@@ -517,15 +638,35 @@
       height: 28px;
     }
 
-    .services-intro {
+    /* Services */
+    .services-top {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 1.5rem;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 1.4rem;
       align-items: stretch;
+      margin-top: 1.5rem;
     }
 
-    .service-panel {
-      padding: 26px;
+    .panel {
+      padding: 30px;
+    }
+
+    .benefits {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.2rem;
+    }
+
+    .benefit {
+      display: flex;
+      gap: 0.9rem;
+      align-items: flex-start;
+      padding: 14px 0;
+      border-bottom: 1px dashed rgba(100,18,38,0.08);
+    }
+
+    .benefit:last-child {
+      border-bottom: 0;
     }
 
     .service-list {
@@ -535,47 +676,43 @@
     }
 
     .service-item {
-      padding: 18px;
+      padding: 18px 18px 16px;
       border-radius: 18px;
       background: #fff;
       border: 1px solid var(--line);
-      transition: 0.25s transform, 0.25s box-shadow, 0.25s border-color;
+      box-shadow: var(--shadow-sm);
+      transition: transform .28s var(--ease), box-shadow .28s var(--ease), border-color .28s var(--ease);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-item::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--gold));
+      opacity: 0;
+      transition: opacity .28s;
     }
 
     .service-item:hover {
-      transform: translateY(-4px);
+      transform: translateY(-6px);
       box-shadow: var(--shadow);
-      border-color: rgba(100, 18, 38, 0.16);
+      border-color: var(--line-strong);
     }
 
-    .benefits {
-      display: grid;
-      gap: 0.9rem;
+    .service-item:hover::before {
+      opacity: 1;
     }
 
-    .benefit {
-      display: flex;
-      gap: 0.8rem;
-      align-items: flex-start;
-    }
-
-    .check {
-      flex: 0 0 30px;
-      height: 30px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: rgba(100, 18, 38, 0.1);
-      color: var(--primary);
-      font-weight: 800;
-      margin-top: 0.1rem;
-    }
-
+    /* Gallery */
     .gallery-head {
       display: flex;
       justify-content: space-between;
-      gap: 1rem;
       align-items: end;
+      gap: 1rem;
       flex-wrap: wrap;
     }
 
@@ -588,16 +725,17 @@
     .filter-btn {
       border: 1px solid var(--line);
       background: #fff;
-      color: #412d33;
+      color: #433139;
       padding: 10px 16px;
       border-radius: 999px;
-      font-weight: 700;
+      font-weight: 800;
       cursor: pointer;
-      transition: 0.2s;
+      transition: .22s;
+      box-shadow: var(--shadow-sm);
     }
 
-    .filter-btn.active,
-    .filter-btn:hover {
+    .filter-btn:hover,
+    .filter-btn.active {
       background: var(--primary);
       color: #fff;
       border-color: var(--primary);
@@ -607,37 +745,44 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 1rem;
-      margin-top: 1.4rem;
+      margin-top: 1.6rem;
     }
 
     .gallery-item {
       position: relative;
       overflow: hidden;
+      min-height: 290px;
       border-radius: 24px;
-      min-height: 260px;
-      background: #e8e0dd;
       cursor: pointer;
+      background: #e7dfdc;
+      border: 1px solid rgba(100,18,38,0.08);
+      box-shadow: var(--shadow-sm);
+      transform: translateZ(0);
+      transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-6px);
       box-shadow: var(--shadow);
-      border: 1px solid rgba(100, 18, 38, 0.08);
     }
 
     .gallery-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.5s ease, filter 0.5s ease;
+      transition: transform .65s var(--ease), filter .5s var(--ease);
     }
 
     .gallery-item:hover img {
       transform: scale(1.06);
-      filter: saturate(1.08);
+      filter: saturate(1.08) contrast(1.02);
     }
 
     .gallery-item::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, transparent 30%, rgba(19, 9, 13, 0.72) 100%);
+      background: linear-gradient(180deg, transparent 34%, rgba(19, 9, 13, 0.78) 100%);
     }
 
     .gallery-caption {
@@ -645,39 +790,43 @@
       left: 18px;
       right: 18px;
       bottom: 16px;
-      color: #fff;
       z-index: 1;
+      color: #fff;
     }
 
     .gallery-caption strong {
       display: block;
-      font-size: 1.05rem;
+      font-size: 1.06rem;
+      margin-bottom: 0.12rem;
     }
 
     .gallery-caption span {
       font-size: 0.92rem;
-      color: rgba(255, 255, 255, 0.84);
+      color: rgba(255,255,255,0.85);
     }
 
+    /* About */
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
+      gap: 1.6rem;
       align-items: center;
+      margin-top: 1.4rem;
     }
 
     .timeline {
       display: grid;
       gap: 0.9rem;
+      margin-top: 1.4rem;
     }
 
     .timeline-item {
       position: relative;
-      padding: 18px 18px 18px 62px;
+      padding: 18px 18px 18px 64px;
       border-radius: 20px;
-      background: #fff;
+      background: rgba(255,255,255,0.94);
       border: 1px solid var(--line);
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow-sm);
     }
 
     .timeline-item::before {
@@ -685,72 +834,85 @@
       position: absolute;
       left: 18px;
       top: 18px;
-      width: 30px;
-      height: 30px;
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
       display: grid;
       place-items: center;
-      background: var(--primary);
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
       color: #fff;
       font-weight: 800;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
+      box-shadow: var(--shadow-sm);
     }
 
     .about-visual {
       position: relative;
-      border-radius: 28px;
+      min-height: 560px;
+      border-radius: 30px;
       overflow: hidden;
-      min-height: 520px;
-      background:
-        linear-gradient(180deg, rgba(100, 18, 38, 0.15), rgba(100, 18, 38, 0.45)),
-        url("https://i.ibb.co/SXrzX0yS/about-us.png") center / cover no-repeat;
       box-shadow: var(--shadow-lg);
+      background:
+        linear-gradient(180deg, rgba(100,18,38,0.08), rgba(100,18,38,0.38)),
+        url("https://i.ibb.co/SXrzX0yS/about-us.png") center / cover no-repeat;
+    }
+
+    .about-visual::before {
+      content: "";
+      position: absolute;
+      inset: 16px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.18);
     }
 
     .about-floating {
       position: absolute;
-      left: 18px;
-      right: 18px;
-      bottom: 18px;
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.65);
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+      padding: 22px;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.72);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
     }
 
+    /* Team */
     .team-grid {
       grid-template-columns: repeat(3, 1fr);
+      margin-top: 1.6rem;
     }
 
     .team-card {
       overflow: hidden;
-      border-radius: 26px;
       background: #fff;
       border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      transition: 0.25s transform, 0.25s box-shadow;
+      border-radius: 26px;
+      box-shadow: var(--shadow-sm);
+      transition: transform .3s var(--ease), box-shadow .3s var(--ease);
     }
 
     .team-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-lg);
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
     }
 
     .team-photo {
       position: relative;
-      aspect-ratio: 4 / 4.4;
+      aspect-ratio: 4 / 4.5;
       overflow: hidden;
-      background:
-        linear-gradient(135deg, rgba(100, 18, 38, 0.12), rgba(214, 176, 106, 0.2)),
-        center / cover no-repeat;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
     }
 
-    .team-photo::after {
+    .team-photo::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, transparent 45%, rgba(14, 9, 11, 0.65) 100%);
+      background:
+        linear-gradient(180deg, rgba(100,18,38,0.06), rgba(14,9,11,0.6));
     }
 
     .team-photo span {
@@ -759,42 +921,77 @@
       bottom: 16px;
       z-index: 1;
       color: #fff;
-      font-weight: 700;
+      font-weight: 800;
+      font-size: 1.02rem;
     }
 
-    .reviews-wrap {
+    .team-photo.luke {
+      background-image: url("https://i.ibb.co/5WgjyShg/luke.png");
+    }
+
+    .team-photo.callum {
+      background-image: url("https://i.ibb.co/jvJpX8jT/callum.png");
+    }
+
+    .team-photo.stephen {
+      background-image: url("https://i.ibb.co/qYYqNLJF/stephen.png");
+    }
+
+    .team-body {
+      padding: 22px;
+    }
+
+    .role {
+      display: inline-flex;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(100,18,38,0.08);
+      color: var(--primary);
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    /* Reviews */
+    .reviews-stage {
+      margin-top: 1.6rem;
       position: relative;
       overflow: hidden;
     }
 
     .reviews-track {
       display: flex;
-      transition: transform 0.5s ease;
+      transition: transform .55s var(--ease);
       touch-action: pan-y;
     }
 
     .review {
       min-width: 100%;
-      padding: 1rem;
+      padding: 0.35rem;
     }
 
     .review-card {
-      padding: 30px;
-      border-radius: 28px;
-      background: #fff;
+      padding: 34px;
+      border-radius: 30px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(249,245,243,0.98));
       border: 1px solid var(--line);
       box-shadow: var(--shadow);
-      display: grid;
-      gap: 1rem;
     }
 
     .stars {
-      color: #d19f39;
+      color: #cf9f42;
       letter-spacing: 0.18em;
-      font-size: 1.1rem;
+      font-size: 1.08rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .review-quote {
+      font-size: clamp(1.15rem, 1.8vw, 1.35rem);
+      line-height: 1.7;
+      color: #332329;
     }
 
     .review-footer {
+      margin-top: 1.25rem;
       display: flex;
       justify-content: space-between;
       gap: 1rem;
@@ -804,35 +1001,42 @@
 
     .review-nav {
       display: flex;
-      gap: 0.6rem;
       justify-content: center;
+      gap: 0.65rem;
       margin-top: 1rem;
     }
 
     .review-btn {
       width: 46px;
       height: 46px;
-      border-radius: 50%;
       border: 1px solid var(--line);
       background: #fff;
-      cursor: pointer;
-      box-shadow: var(--shadow);
-      font-size: 1.1rem;
       color: var(--primary);
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: .22s;
+    }
+
+    .review-btn:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
     }
 
     .dots {
       display: flex;
-      gap: 0.5rem;
       justify-content: center;
-      margin-top: 0.8rem;
+      gap: 0.5rem;
+      margin-top: 0.9rem;
     }
 
     .dot {
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background: #d7c8cc;
+      border: 0;
+      background: #d5c5ca;
       cursor: pointer;
     }
 
@@ -840,17 +1044,20 @@
       background: var(--primary);
     }
 
+    /* Areas */
     .areas-grid {
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
+      grid-template-columns: 0.92fr 1.08fr;
       gap: 1.5rem;
       align-items: stretch;
+      margin-top: 1.5rem;
     }
 
     .area-list {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.8rem;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 0.85rem;
+      margin-top: 1rem;
     }
 
     .area-chip {
@@ -858,58 +1065,79 @@
       border-radius: 16px;
       background: #fff;
       border: 1px solid var(--line);
-      font-weight: 700;
-      color: #412c33;
+      font-weight: 800;
+      color: #423239;
+      box-shadow: var(--shadow-sm);
+      transition: transform .22s var(--ease), border-color .22s var(--ease);
+    }
+
+    .area-chip:hover {
+      transform: translateY(-3px);
+      border-color: var(--line-strong);
     }
 
     .map-wrap {
-      border-radius: 28px;
+      min-height: 440px;
       overflow: hidden;
+      border-radius: 28px;
       box-shadow: var(--shadow-lg);
-      min-height: 420px;
+      border: 1px solid rgba(100,18,38,0.08);
       background: #ddd;
     }
 
     .map-wrap iframe {
       width: 100%;
       height: 100%;
+      min-height: 440px;
       border: 0;
-      min-height: 420px;
     }
 
+    /* FAQ */
     .faq-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
+      gap: 1.4rem;
+      margin-top: 1.6rem;
     }
 
     .faq-item {
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: #fff;
       overflow: hidden;
-      box-shadow: var(--shadow);
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: #fff;
+      box-shadow: var(--shadow-sm);
     }
 
     .faq-question {
       width: 100%;
       text-align: left;
       padding: 18px 20px;
-      border: 0;
       background: #fff;
+      border: 0;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       gap: 1rem;
-      font-weight: 800;
-      color: #2d1a1f;
       cursor: pointer;
+      color: #2f2026;
+      font-weight: 800;
+    }
+
+    .faq-question span {
+      color: var(--primary);
+      font-size: 1.15rem;
+      transition: transform .25s;
+    }
+
+    .faq-item.open .faq-question span {
+      transform: rotate(45deg);
     }
 
     .faq-answer {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.3s ease;
       padding: 0 20px;
+      transition: max-height .35s var(--ease), padding .35s var(--ease);
     }
 
     .faq-item.open .faq-answer {
@@ -917,21 +1145,23 @@
       padding: 0 20px 20px;
     }
 
+    /* Contact */
     .contact-wrap {
       display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
+      grid-template-columns: 0.96fr 1.04fr;
       gap: 1.5rem;
+      margin-top: 1.6rem;
     }
 
     .contact-card,
     .form-card {
-      padding: 28px;
+      padding: 30px;
     }
 
     .contact-list {
       display: grid;
-      gap: 0.9rem;
-      margin-top: 1rem;
+      gap: 0.95rem;
+      margin-top: 1.2rem;
     }
 
     .contact-row {
@@ -940,14 +1170,16 @@
       align-items: flex-start;
       padding: 14px;
       border-radius: 16px;
-      background: #fff;
+      background: rgba(255,255,255,0.94);
       border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
     }
 
     .contact-row .icon {
-      width: 46px;
-      height: 46px;
       margin: 0;
+      width: 48px;
+      height: 48px;
+      flex: 0 0 48px;
     }
 
     form {
@@ -961,8 +1193,8 @@
     }
 
     label {
-      font-weight: 700;
-      color: #2e1a20;
+      font-weight: 800;
+      color: #302126;
     }
 
     input,
@@ -970,9 +1202,17 @@
       width: 100%;
       padding: 14px 16px;
       border-radius: 16px;
-      border: 1px solid rgba(100, 18, 38, 0.16);
+      border: 1px solid rgba(100,18,38,0.16);
       background: #fff;
       color: var(--text);
+      transition: border-color .2s, box-shadow .2s;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: rgba(100,18,38,0.34);
+      box-shadow: 0 0 0 5px rgba(100,18,38,0.06);
+      outline: none;
     }
 
     textarea {
@@ -988,33 +1228,48 @@
     .success-msg {
       display: none;
       color: var(--success);
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .success-msg.show {
       display: block;
     }
 
+    /* Footer */
     footer {
-      background: linear-gradient(180deg, #2c0d17 0%, #1c0a11 100%);
-      color: rgba(255, 255, 255, 0.85);
-      padding: 38px 0 24px;
-      margin-top: 30px;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, #2d0d17 0%, #1e0a11 100%);
+      color: rgba(255,255,255,0.86);
+      padding: 42px 0 24px;
+      margin-top: 24px;
+    }
+
+    footer::before {
+      content: "";
+      position: absolute;
+      inset: -40% auto auto -10%;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(215,176,109,0.13), transparent 70%);
+      pointer-events: none;
     }
 
     .footer-grid {
       display: grid;
       grid-template-columns: 1.2fr 0.8fr 0.8fr;
       gap: 1.5rem;
+      position: relative;
+      z-index: 1;
     }
 
     .footer-grid p,
     .footer-grid a {
-      color: rgba(255, 255, 255, 0.78);
+      color: rgba(255,255,255,0.76);
     }
 
     .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-top: 1px solid rgba(255,255,255,0.1);
       margin-top: 22px;
       padding-top: 18px;
       display: flex;
@@ -1022,16 +1277,19 @@
       gap: 1rem;
       flex-wrap: wrap;
       font-size: 0.92rem;
+      position: relative;
+      z-index: 1;
     }
 
+    /* Lightbox */
     .lightbox {
       position: fixed;
       inset: 0;
-      background: rgba(8, 6, 7, 0.92);
       display: none;
       place-items: center;
-      z-index: 2000;
       padding: 1rem;
+      background: rgba(8, 6, 7, 0.94);
+      z-index: 2000;
     }
 
     .lightbox.open {
@@ -1048,16 +1306,17 @@
       max-height: 85vh;
       object-fit: contain;
       border-radius: 18px;
+      background: #111;
     }
 
     .lightbox-close {
       position: absolute;
-      top: -10px;
+      top: -12px;
       right: -10px;
       width: 46px;
       height: 46px;
-      border-radius: 50%;
       border: 0;
+      border-radius: 50%;
       background: #fff;
       color: #111;
       font-size: 1.3rem;
@@ -1065,6 +1324,7 @@
       box-shadow: var(--shadow-lg);
     }
 
+    /* Floating CTA */
     .floating-cta {
       position: fixed;
       right: 14px;
@@ -1076,37 +1336,25 @@
     }
 
     .floating-cta a {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
+      width: 58px;
+      height: 58px;
       display: grid;
       place-items: center;
+      border-radius: 50%;
       color: #fff;
       background: linear-gradient(135deg, var(--primary), var(--primary-2));
       box-shadow: var(--shadow-lg);
+      transition: transform .25s var(--ease);
     }
 
-    .team-photo.luke {
-      background-image:
-        linear-gradient(135deg, rgba(100, 18, 38, 0.12), rgba(214, 176, 106, 0.2)),
-        url("https://i.ibb.co/5WgjyShg/luke.png");
+    .floating-cta a:hover {
+      transform: translateY(-4px) scale(1.03);
     }
 
-    .team-photo.callum {
-      background-image:
-        linear-gradient(135deg, rgba(100, 18, 38, 0.12), rgba(214, 176, 106, 0.2)),
-        url("https://i.ibb.co/jvJpX8jT/callum.png");
-    }
-
-    .team-photo.stephen {
-      background-image:
-        linear-gradient(135deg, rgba(100, 18, 38, 0.12), rgba(214, 176, 106, 0.2)),
-        url("https://i.ibb.co/qYYqNLJF/stephen.png");
-    }
-
-    @media (max-width: 1080px) {
+    /* Responsive */
+    @media (max-width: 1100px) {
       .hero-wrap,
-      .services-intro,
+      .services-top,
       .about-grid,
       .areas-grid,
       .faq-grid,
@@ -1115,11 +1363,11 @@
         grid-template-columns: 1fr;
       }
 
-      .gallery-grid {
+      .trust-grid {
         grid-template-columns: repeat(3, 1fr);
       }
 
-      .trust-grid {
+      .gallery-grid {
         grid-template-columns: repeat(3, 1fr);
       }
 
@@ -1127,8 +1375,12 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .hero-aside {
-        padding: 0;
+      .hero-title-wrap {
+        max-width: none;
+      }
+
+      .hero-side {
+        max-width: 760px;
       }
     }
 
@@ -1143,15 +1395,15 @@
 
       .nav-links {
         position: absolute;
+        top: calc(100% + 0.7rem);
         left: 1rem;
         right: 1rem;
-        top: calc(100% + 0.65rem);
-        background: rgba(255, 255, 255, 0.96);
-        backdrop-filter: blur(14px);
-        border: 1px solid rgba(100, 18, 38, 0.08);
+        padding: 0.7rem;
+        background: rgba(255,255,255,0.97);
+        border: 1px solid rgba(100,18,38,0.08);
         box-shadow: var(--shadow-lg);
         border-radius: 20px;
-        padding: 0.7rem;
+        backdrop-filter: blur(16px);
         display: none;
         flex-direction: column;
         align-items: stretch;
@@ -1174,17 +1426,14 @@
       }
 
       .hero-wrap {
-        padding: 48px 0 76px;
+        min-height: auto;
+        padding: 26px 0 12px;
       }
 
       .hero-points,
       .service-list,
       .area-list {
         grid-template-columns: 1fr;
-      }
-
-      .metric-row {
-        grid-template-columns: 1fr 1fr 1fr;
       }
 
       .gallery-grid {
@@ -1194,26 +1443,25 @@
       .trust-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+
+      .hero-stats {
+        left: 14px;
+        bottom: 14px;
+      }
+
+      .hero-badge-top {
+        right: 14px;
+        top: 14px;
+      }
     }
 
     @media (max-width: 560px) {
-      .section {
-        padding: 72px 0;
-      }
-
       .container {
         width: min(calc(100% - 1rem), var(--max));
       }
 
-      .hero {
-        min-height: auto;
-      }
-
-      .metric-row,
-      .team-grid,
-      .gallery-grid,
-      .trust-grid {
-        grid-template-columns: 1fr;
+      .section {
+        padding: 72px 0;
       }
 
       .btns {
@@ -1224,15 +1472,41 @@
         width: 100%;
       }
 
-      .hero-card,
+      .trust-grid,
+      .gallery-grid,
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .panel,
       .contact-card,
       .form-card,
-      .service-panel {
+      .review-card {
         padding: 22px;
       }
 
+      .hero-image-shell {
+        padding: 10px;
+      }
+
+      .hero-image {
+        aspect-ratio: 4 / 4.7;
+      }
+
+      .hero-stats {
+        position: static;
+        width: 100%;
+        margin-top: 1rem;
+      }
+
+      .hero-badge-top {
+        position: static;
+        max-width: none;
+        margin-top: 1rem;
+      }
+
       .about-visual {
-        min-height: 400px;
+        min-height: 420px;
       }
 
       .floating-cta {
@@ -1327,18 +1601,19 @@
 
       <div class="nav-cta">
         <a class="mini-contact" href="tel:PASTE PHONE NUMBER HERE">Call Now</a>
-        <a class="btn btn-primary" href="#contact">Free Consultation</a>
+        <a class="btn btn-primary pulse-glow" href="#contact">Free Consultation</a>
       </div>
     </div>
   </header>
 
   <main id="main">
     <section class="hero" id="home" aria-label="Hero section">
-      <div class="hero-bg parallax" aria-hidden="true"></div>
       <div class="container hero-wrap">
         <div class="hero-copy reveal">
           <div class="trust-pill">Family-run, nearly 20 years experience</div>
-          <h1>Lilywood Carpentry – Loft Conversion Specialists in Barnet</h1>
+          <div class="hero-title-wrap">
+            <h1>Lilywood Carpentry – Loft Conversion Specialists in Barnet</h1>
+          </div>
           <p class="lead">Transform your unused loft into a beautiful new bedroom, office or living space.</p>
 
           <div class="hero-points" aria-label="Key trust points">
@@ -1359,56 +1634,46 @@
             <div class="hero-point">
               <div class="check">✓</div>
               <div>
-                <strong>Recommendation-led</strong><br />
-                <span>80% of our work comes from referrals.</span>
+                <strong>80% recommendation led</strong><br />
+                <span>Most of our work comes from happy client referrals.</span>
               </div>
             </div>
             <div class="hero-point">
               <div class="check">✓</div>
               <div>
                 <strong>Free consultation</strong><br />
-                <span>Clear advice before you commit.</span>
+                <span>Clear advice before you commit to the project.</span>
               </div>
             </div>
           </div>
 
           <div class="btns">
-            <a class="btn btn-primary" href="#contact">Book Your Free Loft Consultation</a>
+            <a class="btn btn-light" href="#contact">Book Your Free Loft Consultation</a>
             <a class="btn btn-secondary" href="#gallery">View Our Work</a>
           </div>
         </div>
 
-        <aside class="hero-aside reveal" aria-label="Consultation highlights">
-          <div class="hero-card">
-            <span class="eyebrow">Why homeowners choose us</span>
-            <h3>Premium workmanship, practical guidance, start-to-finish delivery</h3>
-            <p>
-              Currently based in East Barnet (North London), with projects spread across North, West and East London,
-              Hertfordshire and Essex. We are loft conversion specialists who project manage from start to finish and
-              help you plan and design your dream loft.
-            </p>
-            <div class="metric-row">
-              <div class="metric">
-                <strong>20 yrs</strong>
-                <span>Nearly two decades of experience</span>
-              </div>
-              <div class="metric">
-                <strong>80%</strong>
-                <span>Work from recommendations</span>
-              </div>
-              <div class="metric">
-                <strong>1 team</strong>
-                <span>Single point of accountability</span>
-              </div>
+        <div class="hero-side reveal">
+          <div class="hero-image-shell float-slow">
+            <img class="hero-image" src="https://i.ibb.co/YByr02Ms/lofts-hero.png" alt="Loft conversion interior completed by Lilywood Carpentry" loading="eager" />
+            <div class="hero-badge-top glass float-up">
+              <strong>Premium finish</strong>
+              <span>Practical loft spaces designed to feel like part of the home.</span>
             </div>
-            <div class="hero-badge-list">
-              <div class="hero-badge"><span>Loft conversions</span><strong>Specialist</strong></div>
-              <div class="hero-badge"><span>Carpentry detailing</span><strong>Bespoke</strong></div>
-              <div class="hero-badge"><span>Consultation</span><strong>Free</strong></div>
+            <div class="hero-stats">
+              <div class="hero-stat float-up">
+                <strong>20 yrs</strong>
+                <span>Nearly two decades of specialist experience</span>
+              </div>
+              <div class="hero-stat float-up" style="animation-delay:.3s;">
+                <strong>1 team</strong>
+                <span>Single point of accountability from start to finish</span>
+              </div>
             </div>
           </div>
-        </aside>
+        </div>
       </div>
+      <div class="hero-wave" aria-hidden="true"></div>
     </section>
 
     <section class="section" aria-label="Trust signals">
@@ -1423,7 +1688,7 @@
               </svg>
             </div>
             <h3>Family Run Business</h3>
-            <p>Personal service, direct communication, and genuine care from first meeting to final handover.</p>
+            <p>Personal service, direct communication and genuine care from first visit to final handover.</p>
           </article>
 
           <article class="trust-card card reveal">
@@ -1434,7 +1699,7 @@
               </svg>
             </div>
             <h3>Nearly 20 Years Experience</h3>
-            <p>Seasoned craftsmanship built on years of specialist loft and carpentry work across the region.</p>
+            <p>Seasoned loft and carpentry expertise built over years of hands-on project delivery.</p>
           </article>
 
           <article class="trust-card card reveal">
@@ -1447,7 +1712,7 @@
               </svg>
             </div>
             <h3>Fully Managed Projects</h3>
-            <p>We coordinate the process from start to finish, helping you plan and design your dream loft.</p>
+            <p>We help plan, design and manage the build from start to finish for a smoother experience.</p>
           </article>
 
           <article class="trust-card card reveal">
@@ -1459,7 +1724,7 @@
               </svg>
             </div>
             <h3>Free Consultation</h3>
-            <p>Friendly, practical advice to help you understand your options, budget, and next steps.</p>
+            <p>Friendly, practical advice to help you understand the best options for your home.</p>
           </article>
 
           <article class="trust-card card reveal">
@@ -1468,116 +1733,66 @@
                 <path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.65A4 4 0 0 1 19 11c0 5.65-7 10-7 10Z"></path>
               </svg>
             </div>
-            <h3>80% Recommendation Led</h3>
-            <p>Most of our work comes through referrals — a strong signal of trust, reliability, and results.</p>
+            <h3>Luke on Site</h3>
+            <p>Lead carpenter Luke is involved throughout, ensuring consistency, detail and accountability.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="services" aria-labelledby="services-title">
+    <section class="section alt" id="services" aria-labelledby="services-title">
       <div class="container">
-        <span class="eyebrow reveal">Services</span>
-        <div class="services-intro">
-          <div class="service-panel card reveal">
-            <h2 id="services-title">Loft conversions and carpentry, delivered with detail</h2>
-            <p class="lead">
-              Currently based in East Barnet (North London), with projects spread across North, West and East London,
-              Hertfordshire and Essex. We are loft conversion specialists who project manage from start to finish and
-              help you plan and design your dream loft.
-            </p>
-            <div class="benefits" aria-label="Service benefits">
+        <div class="center reveal">
+          <span class="eyebrow">Services</span>
+          <h2 id="services-title">Loft conversions and carpentry done properly</h2>
+          <p class="lead">Currently based in East Barnet (North London), with projects spread across North, West and East London, Hertfordshire and Essex. We are loft conversion specialists who project manage from start to finish and help you plan and design your dream loft.</p>
+        </div>
+
+        <div class="services-top">
+          <div class="panel card reveal">
+            <h3>Why clients choose Lilywood</h3>
+            <div class="benefits">
               <div class="benefit">
                 <div class="check">✓</div>
-                <div>
-                  <strong>Start-to-finish project management</strong><br />
-                  <span>Fewer headaches, clearer communication, smoother delivery.</span>
-                </div>
+                <div><strong>Start-to-finish project management</strong><br /><span>Less stress, clearer communication and better coordination throughout the build.</span></div>
               </div>
               <div class="benefit">
                 <div class="check">✓</div>
-                <div>
-                  <strong>Design guidance built in</strong><br />
-                  <span>We help shape a loft that works beautifully and practically.</span>
-                </div>
+                <div><strong>Design guidance built in</strong><br /><span>We help shape a loft that looks good, works hard and feels right for your home.</span></div>
               </div>
               <div class="benefit">
                 <div class="check">✓</div>
-                <div>
-                  <strong>High-quality finish throughout</strong><br />
-                  <span>Structural work and final carpentry treated with equal care.</span>
-                </div>
+                <div><strong>Craftsmanship beyond the structure</strong><br /><span>The final carpentry details matter just as much as the construction itself.</span></div>
               </div>
               <div class="benefit">
                 <div class="check">✓</div>
-                <div>
-                  <strong>Trusted local coverage</strong><br />
-                  <span>Serving Barnet, North London, Hertfordshire and Essex.</span>
-                </div>
+                <div><strong>Trusted across the region</strong><br /><span>Serving Barnet, North London, Hertfordshire and Essex with a strong recommendation-led reputation.</span></div>
               </div>
             </div>
           </div>
 
-          <div class="service-panel card reveal">
+          <div class="panel card reveal">
             <h3>Loft conversion types</h3>
             <div class="service-list">
-              <div class="service-item">
-                <strong>Velux Loft Conversions</strong>
-                <p>Ideal when you want to maximise existing roof space with minimal exterior changes.</p>
-              </div>
-              <div class="service-item">
-                <strong>Hip to Gable Conversions</strong>
-                <p>Create more usable internal space by extending the sloping side roof into a vertical wall.</p>
-              </div>
-              <div class="service-item">
-                <strong>Mansard Loft Conversions</strong>
-                <p>A premium option for substantial new living space and a striking finish.</p>
-              </div>
-              <div class="service-item">
-                <strong>Dormer Loft Conversions</strong>
-                <p>A popular route to add headroom, floor area and natural light.</p>
-              </div>
-              <div class="service-item">
-                <strong>Pitched Roof Dormers</strong>
-                <p>Elegant, practical dormer solutions designed to complement the property.</p>
-              </div>
-              <div class="service-item">
-                <strong>Rear L Shape Dormers</strong>
-                <p>Excellent for creating generous loft layouts in suitable period homes.</p>
-              </div>
+              <div class="service-item"><strong>Velux Loft Conversions</strong><p>Ideal for maximising the existing roof space with minimal exterior alteration.</p></div>
+              <div class="service-item"><strong>Hip to Gable Conversions</strong><p>Create more usable internal space by extending the sloping side roof into a vertical wall.</p></div>
+              <div class="service-item"><strong>Mansard Loft Conversions</strong><p>A premium choice for substantial new space and a striking final result.</p></div>
+              <div class="service-item"><strong>Dormer Loft Conversions</strong><p>A popular solution for added headroom, floor area and natural light.</p></div>
+              <div class="service-item"><strong>Pitched Roof Dormers</strong><p>Elegant, practical dormer solutions designed to complement the property.</p></div>
+              <div class="service-item"><strong>Rear L Shape Dormers</strong><p>Excellent for creating generous loft layouts in suitable period homes.</p></div>
             </div>
           </div>
         </div>
 
-        <div class="grid" style="margin-top: 1.4rem;">
-          <div class="service-panel card reveal">
-            <h3>Carpentry services</h3>
-            <div class="service-list">
-              <div class="service-item">
-                <strong>Staircases</strong>
-                <p>Well-built access solutions that feel integrated, safe and visually refined.</p>
-              </div>
-              <div class="service-item">
-                <strong>Handrails</strong>
-                <p>Practical detailing that improves both safety and finish quality.</p>
-              </div>
-              <div class="service-item">
-                <strong>Skirting</strong>
-                <p>Crisp, polished lines that bring a room together properly.</p>
-              </div>
-              <div class="service-item">
-                <strong>Wood flooring</strong>
-                <p>Warm, durable finishes installed with care and precision.</p>
-              </div>
-              <div class="service-item">
-                <strong>Hanging doors</strong>
-                <p>Smooth fit, clean alignment and dependable day-to-day performance.</p>
-              </div>
-              <div class="service-item">
-                <strong>Bespoke finishing details</strong>
-                <p>Craftsmanship that elevates the completed space beyond standard builder-grade work.</p>
-              </div>
-            </div>
+        <div class="panel card reveal" style="margin-top:1.4rem;">
+          <h3>Carpentry services</h3>
+          <div class="service-list">
+            <div class="service-item"><strong>Staircases</strong><p>Well-built access solutions that feel integrated, safe and visually refined.</p></div>
+            <div class="service-item"><strong>Handrails</strong><p>Practical detailing that improves both safety and finish quality.</p></div>
+            <div class="service-item"><strong>Skirting</strong><p>Crisp, polished lines that properly complete the room.</p></div>
+            <div class="service-item"><strong>Wood flooring</strong><p>Warm, durable finishes installed with care and precision.</p></div>
+            <div class="service-item"><strong>Hanging doors</strong><p>Smooth fit, clean alignment and dependable everyday performance.</p></div>
+            <div class="service-item"><strong>Bespoke finishing details</strong><p>The kind of joinery and finishing touches that lift the whole result.</p></div>
           </div>
         </div>
       </div>
@@ -1586,14 +1801,12 @@
     <section class="section" id="gallery" aria-labelledby="gallery-title">
       <div class="container">
         <div class="gallery-head">
-          <div>
-            <span class="eyebrow reveal">Gallery</span>
-            <h2 id="gallery-title" class="reveal">Recent work that turns unused space into standout rooms</h2>
-            <p class="lead reveal">
-              Browse a selection of loft bedrooms, staircases, dormer exteriors and attic bathrooms. Replace each image
-              placeholder with your project photos for immediate impact.
-            </p>
+          <div class="reveal">
+            <span class="eyebrow">Gallery</span>
+            <h2 id="gallery-title">Recent work that turns unused space into standout rooms</h2>
+            <p class="lead">Browse loft bedrooms, staircases, dormer exteriors and attic bathrooms. Click any image to open it larger.</p>
           </div>
+
           <div class="filter-bar reveal" role="tablist" aria-label="Gallery filters">
             <button class="filter-btn active" data-filter="all">All</button>
             <button class="filter-btn" data-filter="bedroom">Loft Bedroom</button>
@@ -1606,115 +1819,84 @@
         <div class="gallery-grid">
           <figure class="gallery-item reveal" data-category="bedroom" data-full="https://i.ibb.co/TxvWfGsw/image-1.png">
             <img loading="lazy" src="https://i.ibb.co/TxvWfGsw/image-1.png" alt="Finished loft bedroom with bespoke carpentry" />
-            <figcaption class="gallery-caption">
-              <strong>Loft Bedroom</strong>
-              <span>Bright, calm and beautifully finished</span>
-            </figcaption>
+            <figcaption class="gallery-caption"><strong>Loft Bedroom</strong><span>Bright, calm and beautifully finished</span></figcaption>
           </figure>
 
           <figure class="gallery-item reveal" data-category="staircase" data-full="https://i.ibb.co/1wDrQNd/image-2.png">
             <img loading="lazy" src="https://i.ibb.co/1wDrQNd/image-2.png" alt="Custom loft staircase with clean joinery" />
-            <figcaption class="gallery-caption">
-              <strong>Staircase</strong>
-              <span>Safe access with premium detailing</span>
-            </figcaption>
+            <figcaption class="gallery-caption"><strong>Staircase</strong><span>Safe access with premium detailing</span></figcaption>
           </figure>
 
           <figure class="gallery-item reveal" data-category="dormer" data-full="https://i.ibb.co/SXrzX0yS/about-us.png">
             <img loading="lazy" src="https://i.ibb.co/SXrzX0yS/about-us.png" alt="Dormer loft conversion exterior" />
-            <figcaption class="gallery-caption">
-              <strong>Dormer Exterior</strong>
-              <span>Built to add practical space and value</span>
-            </figcaption>
+            <figcaption class="gallery-caption"><strong>Dormer Exterior</strong><span>Built to add practical space and value</span></figcaption>
           </figure>
 
           <figure class="gallery-item reveal" data-category="bathroom" data-full="https://i.ibb.co/0ySmXkSh/gallery-4.png">
             <img loading="lazy" src="https://i.ibb.co/0ySmXkSh/gallery-4.png" alt="Attic bathroom in a loft conversion" />
-            <figcaption class="gallery-caption">
-              <strong>Attic Bathroom</strong>
-              <span>Compact layout, high-end finish</span>
-            </figcaption>
+            <figcaption class="gallery-caption"><strong>Attic Bathroom</strong><span>Compact layout, high-end finish</span></figcaption>
           </figure>
 
           <figure class="gallery-item reveal" data-category="bedroom" data-full="https://i.ibb.co/F4NMMPp6/image-5.png">
             <img loading="lazy" src="https://i.ibb.co/F4NMMPp6/image-5.png" alt="Large loft bedroom with natural light" />
-            <figcaption class="gallery-caption">
-              <strong>Loft Bedroom</strong>
-              <span>Designed for light and comfort</span>
-            </figcaption>
+            <figcaption class="gallery-caption"><strong>Loft Bedroom</strong><span>Designed for light and comfort</span></figcaption>
           </figure>
 
           <figure class="gallery-item reveal" data-category="staircase" data-full="https://i.ibb.co/3ykLdK7L/image-6.png">
             <img loading="lazy" src="https://i.ibb.co/3ykLdK7L/image-6.png" alt="Timber staircase and handrail detail" />
-            <figcaption class="gallery-caption">
-              <strong>Staircase Detail</strong>
-              <span>Joinery that feels solid and seamless</span>
-            </figcaption>
+            <figcaption class="gallery-caption"><strong>Staircase Detail</strong><span>Joinery that feels solid and seamless</span></figcaption>
           </figure>
 
           <figure class="gallery-item reveal" data-category="dormer" data-full="PASTE GALLERY IMAGE 7 FULL LINK HERE">
             <img loading="lazy" src="PASTE GALLERY IMAGE 7 THUMB LINK HERE" alt="Rear dormer conversion at a London home" />
-            <figcaption class="gallery-caption">
-              <strong>Rear Dormer</strong>
-              <span>Extra headroom, extra usability</span>
-            </figcaption>
+            <figcaption class="gallery-caption"><strong>Rear Dormer</strong><span>Extra headroom, extra usability</span></figcaption>
           </figure>
 
           <figure class="gallery-item reveal" data-category="bathroom" data-full="PASTE GALLERY IMAGE 8 FULL LINK HERE">
             <img loading="lazy" src="PASTE GALLERY IMAGE 8 THUMB LINK HERE" alt="Modern loft bathroom with skylight" />
-            <figcaption class="gallery-caption">
-              <strong>Loft Bathroom</strong>
-              <span>Smart use of every inch</span>
-            </figcaption>
+            <figcaption class="gallery-caption"><strong>Loft Bathroom</strong><span>Smart use of every inch</span></figcaption>
           </figure>
         </div>
       </div>
     </section>
 
-    <section class="section" id="about" aria-labelledby="about-title">
-      <div class="container about-grid">
-        <div class="reveal">
+    <section class="section alt" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="center reveal">
           <span class="eyebrow">About us</span>
           <h2 id="about-title">Specialist loft work with a hands-on, trusted team</h2>
-          <p class="lead">
-            Lilywood Carpentry is a family-run business based in East Barnet, North London. With nearly 20 years of
-            experience, we specialise in loft conversions and high-quality carpentry, managing projects from start to
-            finish and helping clients plan and design the loft space they have been imagining.
-          </p>
-          <p>
-            Our work spans North, West and East London, Hertfordshire and Essex. The approach is straightforward:
-            clear advice, careful planning, honest communication and craftsmanship that holds up long after the project
-            is complete. With Luke on site for all projects and around 80% of our work coming from recommendations,
-            clients know exactly who they are working with and what standard to expect.
-          </p>
-
-          <div class="timeline" aria-label="Project timeline">
-            <div class="timeline-item" data-step="1">
-              <strong>Consultation</strong>
-              <p>We discuss your loft, your goals, and the most suitable way to create useful, attractive space.</p>
-            </div>
-            <div class="timeline-item" data-step="2">
-              <strong>Planning &amp; design</strong>
-              <p>We help refine the layout and practical details so the finished loft works well every day.</p>
-            </div>
-            <div class="timeline-item" data-step="3">
-              <strong>Build &amp; carpentry</strong>
-              <p>The project is managed from start to finish, with workmanship and finishing details given equal attention.</p>
-            </div>
-            <div class="timeline-item" data-step="4">
-              <strong>Handover</strong>
-              <p>You get a completed space ready to use — designed to feel like a natural extension of your home.</p>
-            </div>
-          </div>
+          <p class="lead">Lilywood Carpentry is a family-run business based in East Barnet, North London. With nearly 20 years of experience, we specialise in loft conversions and high-quality carpentry, managing projects from start to finish and helping clients plan and design the loft space they have been imagining.</p>
         </div>
 
-        <div class="about-visual reveal" role="img" aria-label="Lilywood Carpentry team on a loft conversion project">
-          <div class="about-floating">
-            <strong style="display: block; color: var(--primary); font-size: 1.05rem; margin-bottom: 0.35rem;">What sets Lilywood apart</strong>
-            <p style="margin: 0;">
-              A specialist, recommendation-led business with Luke on site for every project, combining loft conversion
-              expertise with quality carpentry finishes that make the final space feel complete.
-            </p>
+        <div class="about-grid">
+          <div class="reveal">
+            <p>Our work spans North, West and East London, Hertfordshire and Essex. The approach is straightforward: clear advice, careful planning, honest communication and craftsmanship that holds up long after the project is complete. With Luke on site for all projects and around 80% of our work coming from recommendations, clients know exactly who they are working with and what standard to expect.</p>
+
+            <div class="timeline" aria-label="Project timeline">
+              <div class="timeline-item" data-step="1">
+                <strong>Consultation</strong>
+                <p>We discuss your loft, your goals and the most suitable way to create useful, attractive space.</p>
+              </div>
+              <div class="timeline-item" data-step="2">
+                <strong>Planning &amp; design</strong>
+                <p>We help refine the layout and practical details so the finished loft works well every day.</p>
+              </div>
+              <div class="timeline-item" data-step="3">
+                <strong>Build &amp; carpentry</strong>
+                <p>The project is managed from start to finish, with workmanship and finishing details given equal attention.</p>
+              </div>
+              <div class="timeline-item" data-step="4">
+                <strong>Handover</strong>
+                <p>You get a completed space ready to use — designed to feel like a natural extension of your home.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-visual reveal" role="img" aria-label="Lilywood Carpentry team on a loft conversion project">
+            <div class="about-floating">
+              <strong style="display:block;color:var(--primary);font-size:1.08rem;margin-bottom:.35rem;">What sets Lilywood apart</strong>
+              <p style="margin:0;">A specialist, recommendation-led business with Luke on site for every project, combining loft conversion expertise with quality carpentry finishes that make the final space feel complete.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -1722,18 +1904,19 @@
 
     <section class="section" id="team" aria-labelledby="team-title">
       <div class="container">
-        <span class="eyebrow reveal">Meet the team</span>
-        <h2 id="team-title" class="reveal">The people behind the workmanship</h2>
-        <div class="grid team-grid" style="margin-top: 1.4rem;">
+        <div class="center reveal">
+          <span class="eyebrow">Meet the team</span>
+          <h2 id="team-title">The people behind the workmanship</h2>
+          <p class="lead">A close-knit, hands-on team focused on quality, accountability and a better client experience.</p>
+        </div>
+
+        <div class="grid team-grid">
           <article class="team-card reveal">
             <div class="team-photo luke"><span>Luke</span></div>
             <div class="team-body">
               <span class="role">Managing Director &amp; Lead Carpenter</span>
-              <h3 style="margin-top: 0.9rem;">Luke</h3>
-              <p>
-                Luke leads Lilywood Carpentry and is on site for all projects, bringing experience, accountability and
-                a high standard of craftsmanship throughout the build.
-              </p>
+              <h3 style="margin-top:.9rem;">Luke</h3>
+              <p>Luke leads Lilywood Carpentry and is on site for all projects, bringing experience, accountability and a high standard of craftsmanship throughout the build.</p>
             </div>
           </article>
 
@@ -1741,11 +1924,8 @@
             <div class="team-photo callum"><span>Callum</span></div>
             <div class="team-body">
               <span class="role">Carpenter</span>
-              <h3 style="margin-top: 0.9rem;">Callum</h3>
-              <p>
-                Callum supports project delivery with reliable site work, skilled carpentry and close attention to
-                finishing details.
-              </p>
+              <h3 style="margin-top:.9rem;">Callum</h3>
+              <p>Callum supports project delivery with reliable site work, skilled carpentry and close attention to finishing details.</p>
             </div>
           </article>
 
@@ -1753,76 +1933,53 @@
             <div class="team-photo stephen"><span>Stephen</span></div>
             <div class="team-body">
               <span class="role">Junior Carpenter (Apprentice)</span>
-              <h3 style="margin-top: 0.9rem;">Stephen</h3>
-              <p>
-                Stephen is developing his craft as an apprentice, contributing energy, precision and a strong
-                willingness to learn the right way.
-              </p>
+              <h3 style="margin-top:.9rem;">Stephen</h3>
+              <p>Stephen is developing his craft as an apprentice, contributing energy, precision and a strong willingness to learn the right way.</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="reviews" aria-labelledby="reviews-title">
+    <section class="section alt" id="reviews" aria-labelledby="reviews-title">
       <div class="container">
-        <span class="eyebrow reveal">Reviews</span>
-        <h2 id="reviews-title" class="reveal">What clients say after the dust settles</h2>
-        <div class="reviews-wrap reveal">
+        <div class="center reveal">
+          <span class="eyebrow">Reviews</span>
+          <h2 id="reviews-title">What clients say after the dust settles</h2>
+          <p class="lead">A recommendation-led business only stays that way by consistently delivering work people are happy to talk about.</p>
+        </div>
+
+        <div class="reviews-stage reveal">
           <div class="reviews-track" id="reviewsTrack">
             <div class="review">
               <article class="review-card">
                 <div class="stars" aria-label="5 star review">★★★★★</div>
-                <p>
-                  “Luke and the team transformed our loft into a beautiful bedroom and office space. The finish is
-                  excellent, communication was clear, and the whole project felt organised from day one.”
-                </p>
-                <div class="review-footer">
-                  <strong>Homeowner in Barnet</strong>
-                  <span>Loft conversion</span>
-                </div>
+                <p class="review-quote">“Luke and the team transformed our loft into a beautiful bedroom and office space. The finish is excellent, communication was clear, and the whole project felt organised from day one.”</p>
+                <div class="review-footer"><strong>Homeowner in Barnet</strong><span>Loft conversion</span></div>
               </article>
             </div>
 
             <div class="review">
               <article class="review-card">
                 <div class="stars" aria-label="5 star review">★★★★★</div>
-                <p>
-                  “From staircase details to the final carpentry touches, everything was completed with real care. You
-                  can tell this is a team that takes pride in the result.”
-                </p>
-                <div class="review-footer">
-                  <strong>Client in Finchley</strong>
-                  <span>Loft and carpentry works</span>
-                </div>
+                <p class="review-quote">“From staircase details to the final carpentry touches, everything was completed with real care. You can tell this is a team that takes pride in the result.”</p>
+                <div class="review-footer"><strong>Client in Finchley</strong><span>Loft and carpentry works</span></div>
               </article>
             </div>
 
             <div class="review">
               <article class="review-card">
                 <div class="stars" aria-label="5 star review">★★★★★</div>
-                <p>
-                  “We chose Lilywood based on a recommendation and would do the same again. Luke being on site made a
-                  huge difference — dependable, practical and easy to deal with.”
-                </p>
-                <div class="review-footer">
-                  <strong>Family in Whetstone</strong>
-                  <span>Dormer loft conversion</span>
-                </div>
+                <p class="review-quote">“We chose Lilywood based on a recommendation and would do the same again. Luke being on site made a huge difference — dependable, practical and easy to deal with.”</p>
+                <div class="review-footer"><strong>Family in Whetstone</strong><span>Dormer loft conversion</span></div>
               </article>
             </div>
 
             <div class="review">
               <article class="review-card">
                 <div class="stars" aria-label="5 star review">★★★★★</div>
-                <p>
-                  “A genuinely professional family-run company. The loft has added valuable living space to our home,
-                  and the whole job was managed start to finish with very little stress.”
-                </p>
-                <div class="review-footer">
-                  <strong>Homeowner in Enfield</strong>
-                  <span>Managed loft project</span>
-                </div>
+                <p class="review-quote">“A genuinely professional family-run company. The loft has added valuable living space to our home, and the whole job was managed start to finish with very little stress.”</p>
+                <div class="review-footer"><strong>Homeowner in Enfield</strong><span>Managed loft project</span></div>
               </article>
             </div>
           </div>
@@ -1838,105 +1995,78 @@
     </section>
 
     <section class="section" id="areas" aria-labelledby="areas-title">
-      <div class="container areas-grid">
-        <div class="reveal">
+      <div class="container">
+        <div class="center reveal">
           <span class="eyebrow">Areas we cover</span>
           <h2 id="areas-title">Serving Barnet, North London, Hertfordshire and Essex</h2>
-          <p class="lead">
-            Based in East Barnet, Lilywood Carpentry works across North, West and East London as well as Hertfordshire and Essex.
-          </p>
-          <div class="area-list" style="margin-top: 1rem;">
-            <div class="area-chip">Barnet</div>
-            <div class="area-chip">Finchley</div>
-            <div class="area-chip">Whetstone</div>
-            <div class="area-chip">Enfield</div>
-            <div class="area-chip">North London</div>
-            <div class="area-chip">Hertfordshire</div>
-            <div class="area-chip">Essex</div>
-          </div>
-          <p style="margin-top: 1rem;">
-            If your property is nearby and you are planning a loft conversion or carpentry project, get in touch for a
-            free consultation.
-          </p>
+          <p class="lead">Based in East Barnet, Lilywood Carpentry works across North, West and East London as well as Hertfordshire and Essex.</p>
         </div>
 
-        <div class="map-wrap reveal" aria-label="Map of service areas">
-          <iframe
-            title="Map showing East Barnet and surrounding service areas"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=East%20Barnet%2C%20London&z=10&output=embed">
-          </iframe>
+        <div class="areas-grid">
+          <div class="reveal">
+            <div class="area-list">
+              <div class="area-chip">Barnet</div>
+              <div class="area-chip">Finchley</div>
+              <div class="area-chip">Whetstone</div>
+              <div class="area-chip">Enfield</div>
+              <div class="area-chip">North London</div>
+              <div class="area-chip">Hertfordshire</div>
+              <div class="area-chip">Essex</div>
+            </div>
+            <p style="margin-top:1.2rem;">If your property is nearby and you are planning a loft conversion or carpentry project, get in touch for a free consultation.</p>
+          </div>
+
+          <div class="map-wrap reveal" aria-label="Map of service areas">
+            <iframe
+              title="Map showing East Barnet and surrounding service areas"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=East%20Barnet%2C%20London&z=10&output=embed">
+            </iframe>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="faq-title">
+    <section class="section alt" aria-labelledby="faq-title">
       <div class="container">
-        <span class="eyebrow reveal">FAQ</span>
-        <h2 id="faq-title" class="reveal">Questions homeowners usually ask before getting started</h2>
-        <div class="faq-grid" style="margin-top: 1.4rem;">
+        <div class="center reveal">
+          <span class="eyebrow">FAQ</span>
+          <h2 id="faq-title">Questions homeowners usually ask before getting started</h2>
+        </div>
+
+        <div class="faq-grid">
           <div class="grid">
             <div class="faq-item reveal open">
-              <button class="faq-question" aria-expanded="true">
-                Do you manage the loft conversion from start to finish?
-                <span>+</span>
-              </button>
-              <div class="faq-answer">
-                <p>Yes. Lilywood Carpentry project manages loft conversions from start to finish and helps clients plan and design their dream loft.</p>
-              </div>
+              <button class="faq-question" aria-expanded="true">Do you manage the loft conversion from start to finish?<span>+</span></button>
+              <div class="faq-answer"><p>Yes. Lilywood Carpentry project manages loft conversions from start to finish and helps clients plan and design their dream loft.</p></div>
             </div>
 
             <div class="faq-item reveal">
-              <button class="faq-question" aria-expanded="false">
-                What types of loft conversions do you carry out?
-                <span>+</span>
-              </button>
-              <div class="faq-answer">
-                <p>We carry out Velux, hip to gable, mansard, dormer, pitched roof dormer and rear L shape dormer loft conversions.</p>
-              </div>
+              <button class="faq-question" aria-expanded="false">What types of loft conversions do you carry out?<span>+</span></button>
+              <div class="faq-answer"><p>We carry out Velux, hip to gable, mansard, dormer, pitched roof dormer and rear L shape dormer loft conversions.</p></div>
             </div>
 
             <div class="faq-item reveal">
-              <button class="faq-question" aria-expanded="false">
-                Do you also provide carpentry services?
-                <span>+</span>
-              </button>
-              <div class="faq-answer">
-                <p>Yes. We also provide carpentry services including staircases, handrails, skirting, wood flooring and hanging doors.</p>
-              </div>
+              <button class="faq-question" aria-expanded="false">Do you also provide carpentry services?<span>+</span></button>
+              <div class="faq-answer"><p>Yes. We also provide carpentry services including staircases, handrails, skirting, wood flooring and hanging doors.</p></div>
             </div>
           </div>
 
           <div class="grid">
             <div class="faq-item reveal">
-              <button class="faq-question" aria-expanded="false">
-                Who will be on site during the project?
-                <span>+</span>
-              </button>
-              <div class="faq-answer">
-                <p>Luke, Managing Director and Lead Carpenter, is on site for all projects, giving clients confidence in quality control and continuity.</p>
-              </div>
+              <button class="faq-question" aria-expanded="false">Who will be on site during the project?<span>+</span></button>
+              <div class="faq-answer"><p>Luke, Managing Director and Lead Carpenter, is on site for all projects, giving clients confidence in quality control and continuity.</p></div>
             </div>
 
             <div class="faq-item reveal">
-              <button class="faq-question" aria-expanded="false">
-                Where do you work?
-                <span>+</span>
-              </button>
-              <div class="faq-answer">
-                <p>We are based in East Barnet and work across North, West and East London, Hertfordshire and Essex.</p>
-              </div>
+              <button class="faq-question" aria-expanded="false">Where do you work?<span>+</span></button>
+              <div class="faq-answer"><p>We are based in East Barnet and work across North, West and East London, Hertfordshire and Essex.</p></div>
             </div>
 
             <div class="faq-item reveal">
-              <button class="faq-question" aria-expanded="false">
-                How do I start?
-                <span>+</span>
-              </button>
-              <div class="faq-answer">
-                <p>Use the contact form below or call us directly to book your free loft conversion consultation.</p>
-              </div>
+              <button class="faq-question" aria-expanded="false">How do I start?<span>+</span></button>
+              <div class="faq-answer"><p>Use the contact form below or call us directly to book your free loft conversion consultation.</p></div>
             </div>
           </div>
         </div>
@@ -1944,99 +2074,88 @@
     </section>
 
     <section class="section" id="contact" aria-labelledby="contact-title">
-      <div class="container contact-wrap">
-        <div class="contact-card card shadow-lg reveal">
+      <div class="container">
+        <div class="center reveal">
           <span class="eyebrow">Contact</span>
           <h2 id="contact-title">Book Your Free Loft Conversion Consultation</h2>
-          <p class="lead">
-            Tell us about your property, your ideas and the space you want to create. We will come back to you promptly.
-          </p>
-          <div class="contact-list">
-            <div class="contact-row">
-              <div class="icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72l.34 2.71a2 2 0 0 1-.57 1.73l-1.2 1.2a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 1.73-.57l2.71.34A2 2 0 0 1 22 16.92Z"></path>
-                </svg>
-              </div>
-              <div>
-                <strong>Phone</strong><br />
-                <a href="tel:PASTE PHONE NUMBER HERE">PASTE PHONE NUMBER HERE</a>
-              </div>
-            </div>
+          <p class="lead">Tell us about your property, your ideas and the space you want to create. We will come back to you promptly.</p>
+        </div>
 
-            <div class="contact-row">
-              <div class="icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <rect x="3" y="5" width="18" height="14" rx="2"></rect>
-                  <path d="m3 7 9 6 9-6"></path>
-                </svg>
+        <div class="contact-wrap">
+          <div class="contact-card card reveal">
+            <h3>Get in touch directly</h3>
+            <div class="contact-list">
+              <div class="contact-row">
+                <div class="icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72l.34 2.71a2 2 0 0 1-.57 1.73l-1.2 1.2a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 1.73-.57l2.71.34A2 2 0 0 1 22 16.92Z"></path>
+                  </svg>
+                </div>
+                <div><strong>Phone</strong><br /><a href="tel:PASTE PHONE NUMBER HERE">PASTE PHONE NUMBER HERE</a></div>
               </div>
-              <div>
-                <strong>Email</strong><br />
-                <a href="mailto:PASTE EMAIL HERE">PASTE EMAIL HERE</a>
-              </div>
-            </div>
 
-            <div class="contact-row">
-              <div class="icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <path d="M12 21s6-5.1 6-11a6 6 0 1 0-12 0c0 5.9 6 11 6 11Z"></path>
-                  <circle cx="12" cy="10" r="2.3"></circle>
-                </svg>
+              <div class="contact-row">
+                <div class="icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                    <path d="m3 7 9 6 9-6"></path>
+                  </svg>
+                </div>
+                <div><strong>Email</strong><br /><a href="mailto:PASTE EMAIL HERE">PASTE EMAIL HERE</a></div>
               </div>
-              <div>
-                <strong>Address</strong><br />
-                East Barnet, North London
-              </div>
-            </div>
 
-            <div class="contact-row">
-              <div class="icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <path d="M8 2v4"></path>
-                  <path d="M16 2v4"></path>
-                  <rect x="3" y="4" width="18" height="18" rx="2"></rect>
-                  <path d="M3 10h18"></path>
-                </svg>
+              <div class="contact-row">
+                <div class="icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M12 21s6-5.1 6-11a6 6 0 1 0-12 0c0 5.9 6 11 6 11Z"></path>
+                    <circle cx="12" cy="10" r="2.3"></circle>
+                  </svg>
+                </div>
+                <div><strong>Address</strong><br />East Barnet, North London</div>
               </div>
-              <div>
-                <strong>Hours</strong><br />
-                Mon–Fri 9am–5pm, Sat 8am–2pm, Sun Closed
+
+              <div class="contact-row">
+                <div class="icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M8 2v4"></path>
+                    <path d="M16 2v4"></path>
+                    <rect x="3" y="4" width="18" height="18" rx="2"></rect>
+                    <path d="M3 10h18"></path>
+                  </svg>
+                </div>
+                <div><strong>Hours</strong><br />Mon–Fri 9am–5pm, Sat 8am–2pm, Sun Closed</div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="form-card card reveal">
-          <h3>Send an enquiry</h3>
-          <form id="contactForm" action="mailto:PASTE EMAIL HERE" method="post" enctype="text/plain">
-            <div class="field">
-              <label for="name">Name</label>
-              <input id="name" name="Name" type="text" autocomplete="name" required />
-            </div>
-            <div class="field">
-              <label for="email">Email</label>
-              <input id="email" name="Email" type="email" autocomplete="email" required />
-            </div>
-            <div class="field">
-              <label for="phone">Phone</label>
-              <input id="phone" name="Phone" type="tel" autocomplete="tel" />
-            </div>
-            <div class="field">
-              <label for="message">Message</label>
-              <textarea
-                id="message"
-                name="Message"
-                required
-                placeholder="Tell us about your loft, property location, and what you'd like to create."></textarea>
-            </div>
-            <button class="btn btn-primary" type="submit">Book Your Free Loft Consultation</button>
-            <p class="form-note">
-              For GitHub Pages, this form will open the user’s email app via <code>mailto:</code>. To make it send
-              directly without an email client, connect it to Formspree, Basin or Netlify Forms.
-            </p>
-            <p class="success-msg" id="successMsg">Your device is preparing an email draft with your enquiry details.</p>
-          </form>
+          <div class="form-card card reveal">
+            <h3>Send an enquiry</h3>
+            <form id="contactForm" action="mailto:PASTE EMAIL HERE" method="post" enctype="text/plain">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="Name" type="text" autocomplete="name" required />
+              </div>
+
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="Email" type="email" autocomplete="email" required />
+              </div>
+
+              <div class="field">
+                <label for="phone">Phone</label>
+                <input id="phone" name="Phone" type="tel" autocomplete="tel" />
+              </div>
+
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea id="message" name="Message" required placeholder="Tell us about your loft, property location, and what you'd like to create."></textarea>
+              </div>
+
+              <button class="btn btn-primary" type="submit">Book Your Free Loft Consultation</button>
+              <p class="form-note">For GitHub Pages, this form opens the user’s email app via <code>mailto:</code>. To send directly without an email client, connect Formspree, Basin or Netlify Forms.</p>
+              <p class="success-msg" id="successMsg">Your device is preparing an email draft with your enquiry details.</p>
+            </form>
+          </div>
         </div>
       </div>
     </section>
@@ -2046,11 +2165,11 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <h3 style="color: #fff;">Lilywood Carpentry</h3>
+          <h3 style="color:#fff;">Lilywood Carpentry</h3>
           <p>Family-run loft conversion and carpentry specialists based in East Barnet, serving North, West and East London, Hertfordshire and Essex.</p>
         </div>
         <div>
-          <h3 style="color: #fff;">Contact</h3>
+          <h3 style="color:#fff;">Contact</h3>
           <p>
             <a href="tel:PASTE PHONE NUMBER HERE">PASTE PHONE NUMBER HERE</a><br />
             <a href="mailto:PASTE EMAIL HERE">PASTE EMAIL HERE</a><br />
@@ -2058,10 +2177,11 @@
           </p>
         </div>
         <div>
-          <h3 style="color: #fff;">Office hours</h3>
+          <h3 style="color:#fff;">Office hours</h3>
           <p>Mon–Fri 9am–5pm<br />Sat 8am–2pm<br />Sun Closed</p>
         </div>
       </div>
+
       <div class="footer-bottom">
         <span>© <span id="year"></span> Lilywood Carpentry. All rights reserved.</span>
         <span>Built for speed, accessibility, SEO and conversion.</span>
@@ -2114,7 +2234,7 @@
     const navLinks = $$("#navMenu a");
 
     const onScrollSpy = () => {
-      const y = window.scrollY + 120;
+      const y = window.scrollY + 130;
       sections.forEach((sec) => {
         const top = sec.offsetTop;
         const bottom = top + sec.offsetHeight;
@@ -2130,27 +2250,13 @@
     window.addEventListener("scroll", onScrollSpy, { passive: true });
     onScrollSpy();
 
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add("visible");
-        });
-      },
-      { threshold: 0.12 }
-    );
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    }, { threshold: 0.12 });
 
     $$(".reveal").forEach((el) => io.observe(el));
-
-    const parallaxEls = $$(".parallax");
-
-    const onParallax = () => {
-      const scrolled = window.scrollY;
-      parallaxEls.forEach((el) => {
-        el.style.transform = `translateY(${scrolled * 0.18}px) scale(1.06)`;
-      });
-    };
-
-    window.addEventListener("scroll", onParallax, { passive: true });
 
     const filterBtns = $$(".filter-btn");
     const galleryItems = $$(".gallery-item");
@@ -2205,14 +2311,9 @@
 
     const renderDots = () => {
       dotsWrap.innerHTML = slides
-        .map(
-          (_, i) =>
-            `<button class="dot ${i === reviewIndex ? "active" : ""}" aria-label="Go to review ${i + 1}"></button>`
-        )
+        .map((_, i) => `<button class="dot ${i === reviewIndex ? "active" : ""}" aria-label="Go to review ${i + 1}"></button>`)
         .join("");
-      $$(".dot", dotsWrap).forEach((dot, i) =>
-        dot.addEventListener("click", () => goReview(i))
-      );
+      $$(".dot", dotsWrap).forEach((dot, i) => dot.addEventListener("click", () => goReview(i)));
     };
 
     const goReview = (i) => {
@@ -2227,21 +2328,13 @@
     renderDots();
     setInterval(() => goReview(reviewIndex + 1), 7000);
 
-    track.addEventListener(
-      "touchstart",
-      (e) => {
-        startX = e.touches[0].clientX;
-      },
-      { passive: true }
-    );
+    track.addEventListener("touchstart", (e) => {
+      startX = e.touches[0].clientX;
+    }, { passive: true });
 
-    track.addEventListener(
-      "touchmove",
-      (e) => {
-        currentX = e.touches[0].clientX;
-      },
-      { passive: true }
-    );
+    track.addEventListener("touchmove", (e) => {
+      currentX = e.touches[0].clientX;
+    }, { passive: true });
 
     track.addEventListener("touchend", () => {
       const diff = currentX - startX;
