@@ -30,13 +30,12 @@
       --muted:#6d6266;
       --bg:#fbf8f6;
       --bg-soft:#f5eeea;
-      --panel:#fffaf9;
       --line:rgba(100,18,38,.12);
       --line-strong:rgba(100,18,38,.24);
       --shadow-xs:0 6px 18px rgba(20,14,16,.06);
-      --shadow-sm:0 12px 30px rgba(20,14,16,.08);
-      --shadow:0 22px 60px rgba(20,14,16,.14);
-      --shadow-lg:0 36px 100px rgba(20,14,16,.2);
+      --shadow-sm:0 10px 28px rgba(20,14,16,.08);
+      --shadow:0 18px 48px rgba(20,14,16,.12);
+      --shadow-lg:0 30px 90px rgba(20,14,16,.18);
       --radius-sm:16px;
       --radius:24px;
       --radius-lg:38px;
@@ -81,11 +80,12 @@
     .section{
       position:relative;
       padding:var(--section) 0;
+      overflow:clip;
     }
 
     .section.alt{
       background:
-        radial-gradient(circle at 15% 18%, rgba(100,18,38,.045), transparent 25%),
+        radial-gradient(circle at 15% 18%, rgba(100,18,38,.05), transparent 25%),
         radial-gradient(circle at 88% 85%, rgba(215,176,106,.06), transparent 22%),
         linear-gradient(180deg,rgba(255,255,255,.55),rgba(245,238,234,.98));
     }
@@ -157,10 +157,7 @@
       max-width:64ch;
     }
 
-    .section-head{
-      margin-bottom:2.2rem;
-    }
-
+    .section-head{margin-bottom:2.2rem}
     .grid{display:grid;gap:1.5rem}
 
     .card{
@@ -241,7 +238,7 @@
 
     .reveal{
       opacity:0;
-      transform:translateY(40px) scale(.985);
+      transform:translateY(42px) scale(.985);
       transition:opacity 1s var(--ease), transform 1s var(--ease);
     }
 
@@ -280,7 +277,6 @@
       78%{left:130%}
     }
 
-    /* Header */
     .site-header{
       position:sticky;
       top:0;
@@ -399,7 +395,6 @@
     .menu-toggle[aria-expanded="true"]::before{transform:translateY(7px) rotate(45deg)}
     .menu-toggle[aria-expanded="true"]::after{transform:translateY(-7px) rotate(-45deg)}
 
-    /* Hero */
     .hero{
       position:relative;
       overflow:hidden;
@@ -609,7 +604,6 @@
       z-index:1;
     }
 
-    /* Trust */
     .trust-grid{grid-template-columns:repeat(5,1fr)}
 
     .trust-card{
@@ -640,7 +634,6 @@
 
     .icon svg{width:28px;height:28px}
 
-    /* Services */
     .services-layout{
       display:grid;
       grid-template-columns:1.06fr .94fr;
@@ -708,7 +701,6 @@
 
     .service-item:hover::before{opacity:1}
 
-    /* Gallery */
     .gallery-head{
       display:flex;
       justify-content:space-between;
@@ -806,7 +798,6 @@
       color:rgba(255,255,255,.86);
     }
 
-    /* About */
     .about-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
@@ -884,7 +875,6 @@
       box-shadow:var(--shadow);
     }
 
-    /* Team */
     .team-grid{
       grid-template-columns:repeat(3,1fr);
       margin-top:1.9rem;
@@ -947,7 +937,6 @@
       font-weight:800;
     }
 
-    /* Reviews */
     .reviews-stage{
       position:relative;
       overflow:hidden;
@@ -1054,7 +1043,6 @@
 
     .dot.active{background:var(--primary)}
 
-    /* Areas */
     .areas-grid{
       display:grid;
       grid-template-columns:.94fr 1.06fr;
@@ -1103,7 +1091,6 @@
       border:0;
     }
 
-    /* FAQ */
     .faq-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
@@ -1146,9 +1133,7 @@
       cursor:pointer;
     }
 
-    .faq-question:hover{
-      color:var(--primary);
-    }
+    .faq-question:hover{color:var(--primary)}
 
     .faq-icon{
       width:34px;
@@ -1188,7 +1173,6 @@
       grid-template-rows:1fr;
     }
 
-    /* Contact */
     .contact-grid{
       display:grid;
       grid-template-columns:.95fr 1.05fr;
@@ -1285,7 +1269,6 @@
 
     .success-msg.show{display:block}
 
-    /* Footer */
     footer{
       position:relative;
       overflow:hidden;
@@ -1332,7 +1315,6 @@
       font-size:.92rem;
     }
 
-    /* Lightbox */
     .lightbox{
       position:fixed;
       inset:0;
@@ -1373,7 +1355,6 @@
       box-shadow:var(--shadow-lg);
     }
 
-    /* Floating CTA */
     .floating-cta{
       position:fixed;
       right:14px;
@@ -1401,7 +1382,6 @@
       box-shadow:0 24px 50px rgba(100,18,38,.28);
     }
 
-    /* Responsive */
     @media (max-width:1120px){
       .hero-grid,
       .services-layout,
@@ -1813,16 +1793,6 @@
             <img loading="lazy" src="https://i.ibb.co/3ykLdK7L/image-6.png" alt="Timber staircase and handrail detail" />
             <figcaption class="gallery-caption"><strong>Staircase Detail</strong><span>Joinery that feels solid and seamless</span></figcaption>
           </figure>
-
-          <figure class="gallery-item reveal" data-category="dormer" data-full="PASTE GALLERY IMAGE 7 FULL LINK HERE">
-            <img loading="lazy" src="PASTE GALLERY IMAGE 7 THUMB LINK HERE" alt="Rear dormer conversion at a London home" />
-            <figcaption class="gallery-caption"><strong>Rear Dormer</strong><span>Extra headroom, extra usability</span></figcaption>
-          </figure>
-
-          <figure class="gallery-item reveal" data-category="bathroom" data-full="PASTE GALLERY IMAGE 8 FULL LINK HERE">
-            <img loading="lazy" src="PASTE GALLERY IMAGE 8 THUMB LINK HERE" alt="Modern loft bathroom with skylight" />
-            <figcaption class="gallery-caption"><strong>Loft Bathroom</strong><span>Smart use of every inch</span></figcaption>
-          </figure>
         </div>
       </div>
     </section>
@@ -2223,7 +2193,6 @@
     const $ = (s, p = document) => p.querySelector(s);
     const $$ = (s, p = document) => [...p.querySelectorAll(s)];
 
-    // Mobile nav
     const toggle = $(".menu-toggle");
     const navMenu = $("#navMenu");
 
@@ -2240,7 +2209,6 @@
       })
     );
 
-    // Scroll spy
     const sections = $$("main section[id]");
     const navLinks = $$("#navMenu a");
 
@@ -2261,7 +2229,6 @@
     window.addEventListener("scroll", onScrollSpy, { passive: true });
     onScrollSpy();
 
-    // Reveal on scroll
     const io = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) entry.target.classList.add("visible");
@@ -2270,7 +2237,6 @@
 
     $$(".reveal").forEach((el) => io.observe(el));
 
-    // Gallery filter
     const filterBtns = $$(".filter-btn");
     const galleryItems = $$(".gallery-item");
 
@@ -2286,7 +2252,6 @@
       })
     );
 
-    // Lightbox
     const lightbox = $("#lightbox");
     const lightboxImage = $("#lightboxImage");
     const lightboxClose = $("#lightboxClose");
@@ -2316,7 +2281,6 @@
       if (e.key === "Escape") closeLightbox();
     });
 
-    // Reviews carousel
     const track = $("#reviewsTrack");
     const slides = $$(".review", track);
     const dotsWrap = $("#reviewDots");
@@ -2358,7 +2322,6 @@
       currentX = 0;
     });
 
-    // FAQ fixed
     const faqItems = $$(".faq-item");
     faqItems.forEach((item) => {
       const btn = $(".faq-question", item);
@@ -2375,12 +2338,10 @@
       });
     });
 
-    // Contact submit note
     $("#contactForm")?.addEventListener("submit", () => {
       $("#successMsg")?.classList.add("show");
     });
 
-    // Footer year
     $("#year").textContent = new Date().getFullYear();
   </script>
 </body>
